@@ -123,7 +123,7 @@ Finding a particular document by its `email`.
 db.inquiry.find({"email":"muneer@gmail.com"})
 ```
 
-This way we can find any document by changing **selection statement** in object.
+This way we can find any document by changing **selected statement** in object.
 ***
 ## *Update*
 ***
