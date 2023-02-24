@@ -49,30 +49,55 @@ interview >
 ## *1. Create*
 
 Inserting a **single** document in collection (inquiry).
-
-```json
-db.inquiry.insertOne({"name":"Muneer Basha","age":38,"marriage status": "Yes","email":"muneer@gmail.com","phonenumber":"7780301577","skills":[ "Json" , "Sql" , "Python"],"experience":"Yes"})
+```js
+db.inquiry.insertOne({"name":"Muneer Basha",
+"age":38,
+"marriage status": "Yes",
+"email":"muneer@gmail.com",
+"phonenumber":"7780301577",
+"skills":[ "Json" , "Sql" , "Python"],
+"experience":"Yes"})
 ```
 **Syntax :**
 
-```json
+```
 db.collection name.insertOne({})
 ```
 ***
 Inserting a **multi** document in collection (inquiry).
 ***
 
-```json
-db.inquiry.insertMany([{"name":"Meeravali","age":32,"marriage status": "Yes","email":"Meera@gmail.com","phonenumber":"9700787228","skills":[  "Sql" , "Python", "Java sript"],"experience":"No"},
+```js
 
-{"name":"Muskan Fathima","age":20,"marriage status": "No","email":"muskan@gmail.com","phonenumber":"9570301426","skills":[ "Json" , "Sql" ],"experience":"Yes"},
+db.inquiry.insertMany([{"name":"Meeravali",
+"age":32,
+"marriage status": "Yes",
+"email":"Meera@gmail.com",
+"phonenumber":"9700787228",
+"skills":[  "Sql" , "Python", "Java sript"],
+"experience":"No"},
 
-{"name":"Jareena","age":29,"marriage status": "Yes","email":"Jarru@gmail.com","phonenumber":"8555835021","skills":[ "Json" , "Sql" , "Python", "HTML"],"experience":"No"}]
+{"name":"Muskan Fathima",
+"age":20,
+"marriage status": "No",
+"email":"muskan@gmail.com",
+"phonenumber":"9570301426",
+"skills":[ "Json" , "Sql" ],
+"experience":"Yes"},
+
+{"name":"Jareena",
+"age":29,
+"marriage status": "Yes",
+"email":"Jarru@gmail.com",
+"phonenumber":"8555835021",
+"skills":[ "Json" , "Sql" , "Python", "HTML"],
+"experience":"No"}]
 )
+
 ```
 **Syntax**
 
-```json
+```js
 db.collection name.insertMany([{},{},{} .... ])
 ```
 ***
@@ -81,20 +106,20 @@ db.collection name.insertMany([{},{},{} .... ])
 
 Finding all documents in collection (inquiry)
 
-```json
+```js
 db.inquiry.find()
 ```
 
 Finding a particular document by its `_id`.
 
-```json
+```js
 db.inquiry.find({_id:Object("63f85f57ca60226bc3fd14ec")})
 ```
 
 Finding a particular document by its `email`.
 
 
-```json
+```js
 db.inquiry.find({"email":"muneer@gmail.com"})
 ```
 
@@ -104,12 +129,12 @@ This way we can find any document by changing **selection statement** in object.
 ***
 Updating the **marriage status**,**age** of the **single** document.
 
-```json
+```js
 db.inquiry.updateOne({"email":"Jarru@gmail.com"},{$set:{"marriage status":"no","age":"28"}})
 ```
 Updating the **marriage status** of **all** documents.
 
-```json
+```js
 db.inquiry.updateMany({"age":18},{$set{"marriage status":"no"}})
 ```
 
@@ -117,13 +142,13 @@ db.inquiry.updateMany({"age":18},{$set{"marriage status":"no"}})
 
 Deleting **all** documents in the collection.
 
-```json
+```js
 db.inquiry.deleteMany({})
 ```
 
 Deleting **single** document in the collection by its name.
 
-```json
+```js
 db.inquiry.deleteOne({"name":"Jareena"})
 ```
 
@@ -131,7 +156,7 @@ This way we can delete any documents by changing selected statement in the objec
 
 ## *Nested object and array*
 InsertOne
-```json
+```js
 db.inquiry.insertOne({
      "name":"MuneerBasha",
      "skills":
@@ -140,22 +165,36 @@ db.inquiry.insertOne({
      {"name":"Jshon","rating":9}],
      "education":
      [{"institute":"Government girls high school","type":"ssc","year":"1986-1990"},
-     {"institute":"Sri chaithanya","type":"Intermideate","year":"1990-1993"},{"institute":"KITS","type":"BTEC","year":"1993-1998"}],
+     {"institute":"Sri chaithanya","type":"Intermideate","year":"1990-1993"},
+     {"institute":"KITS","type":"BTEC","year":"1993-1998"}],
      "Married":"Yes",
      "children":3,"age":38})
 ```
 InserMany
-```json
+```
 
 db.inquiry.insertMany([{
-     "name":"Muskan","skills":[{"name":"python","rating":6},{"name":"sql","rating":7},{"name":"Jshon","rating":9}],
-     "education":[{"institute":"Vaasavi high school","type":"ssc","year":"2016-2022"},{"institute":"Sri chaithanya","type":"Intermideate","year":"2022-2024"},{"institute":"KITS","type":"BTEC","year":"2024-2029"}],
+     "name":"Muskan",
+     "skills":
+     [{"name":"python","rating":6},
+     {"name":"sql","rating":7},
+     {"name":"Jshon","rating":9}],
+     "education":
+     [{"institute":"Vaasavi high school","type":"ssc","year":"2016-2022"},
+     {"institute":"Sri chaithanya","type":"Intermideate","year":"2022-2024"},
+     {"institute":"KITS","type":"BTEC","year":"2024-2029"}],
      "Married":"No",
      "children":"NO",
      "age":21},
      
-     {"name":"Jarru","skills":[{"name":"python","rating":6},{"name":"sql","rating":7},{"name":"Json","rating":9}],
-     "education":[{"institute":"ZPhigh school","type":"SSC","year":"1990-2000"},{"institute":"Womens college","type":"Intermideate","year":"2000-2013"}],
+     {"name":"Jarru",
+     "skills":
+     [{"name":"python","rating":6},
+     {"name":"sql","rating":7},
+     {"name":"Json","rating":9}],
+     "education":
+     [{"institute":"ZPhigh school","type":"SSC","year":"1990-2000"},
+     {"institute":"Womens college","type":"Intermideate","year":"2000-2013"}],
      "married":"yes",
      "childern":2,"age":30}])
 ```
