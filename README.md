@@ -17,7 +17,7 @@ This **inquiry** application allows users to **Create** , **Read** , **Update** 
 - Experience      : `string`
 
 ## *Steps*
-1. First we have create a database **(interview)** in mongodb .
+1. First we have to create a database **(interview)** in mongodb .
 2. Create Collection (**inquiry**)in DB **(interview)** which we had created.
 3. Now , we have to open **mangoosh** shell 
 in mongodb.
