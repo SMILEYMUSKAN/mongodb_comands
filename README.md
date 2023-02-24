@@ -170,7 +170,7 @@ db.inquiry.insertOne({
      "Married":"Yes",
      "children":3,"age":38})
 ```
-InserMany
+InsertMany
 ```js
 
 db.inquiry.insertMany([{
